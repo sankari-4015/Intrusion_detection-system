@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI IDS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>AI Intrusion Detection System</h2>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</div>
+
+<div class="status-card">
+    <h3>System Status</h3>
+    <p>Model Accuracy: 98%</p>
+    <p>Live Monitoring Enabled</p>
+</div>
+
+<div class="container">
+    <form action="/predict" method="POST">
+        <input type="number" name="duration" placeholder="Duration" required>
+        <input type="number" name="src_bytes" placeholder="Source Bytes" required>
+        <input type="number" name="dst_bytes" placeholder="Destination Bytes" required>
+        <input type="number" name="count" placeholder="Connection Count" required>
+        <button type="submit">Check Traffic</button>
+        <a href="/simulate">
+    <button type="button">Simulate Attack 🚨</button>
+</a>
+    </form>
+</div>
+
+</body>
+</html>

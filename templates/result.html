@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>{{ result }}</h2>
+
+    <h3>Threat Level: {{ risk }}</h3>
+
+    <hr>
+
+    <h3>📊 Traffic Summary</h3>
+
+    <ul style="list-style:none; padding:0;">
+        {% if counts %}
+            {% for key, value in counts.items() %}
+                <li style="margin:8px;">
+                    <strong>{{ key }}</strong> : {{ value }}
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>No data available</li>
+        {% endif %}
+    </ul>
+
+    <br>
+
+    <a href="/">
+        <button>⬅ Go Back</button>
+    </a>
+
+</div>
+
+</body>
+</html>
